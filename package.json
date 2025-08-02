@@ -1,0 +1,14 @@
+{
+  "name": "feed-blocker",
+  "version": "1.0.0",
+  "description": "Firefox extension to hide feeds on LinkedIn and Twitter",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "devDependencies": {
+    "@types/webextension-polyfill": "^0.10.7",
+    "esbuild": "^0.19.11",
+    "typescript": "^5.3.3"
+  }
+}
