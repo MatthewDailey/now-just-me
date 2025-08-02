@@ -8,7 +8,8 @@ function hideFeed() {
   
   const feedSelectors = [
     '[aria-label="Timeline: Your Home Timeline"]',
-    '[data-testid="primaryColumn"] section[aria-labelledby="accessible-list-0"]'
+    '[data-testid="primaryColumn"] section[aria-labelledby="accessible-list-0"]',
+    '[aria-label*="New posts are available"]'
   ];
 
   // Check if style already exists
@@ -51,26 +52,28 @@ if (document.readyState === 'loading') {
 }
 
 // Track URL changes in single-page application
-let lastUrl = location.href;
-const observer = new MutationObserver(() => {
-  const currentUrl = location.href;
-  if (currentUrl !== lastUrl) {
-    lastUrl = currentUrl;
-    // Remove the style when navigating away from home
-    const existingStyle = document.querySelector('#now-just-me-style');
-    if (existingStyle) {
-      existingStyle.remove();
+{
+  let lastUrl = location.href;
+  const observer = new MutationObserver(() => {
+    const currentUrl = location.href;
+    if (currentUrl !== lastUrl) {
+      lastUrl = currentUrl;
+      // Remove the style when navigating away from home
+      const existingStyle = document.querySelector('#now-just-me-style');
+      if (existingStyle) {
+        existingStyle.remove();
+      }
+      // Remove the message if it exists
+      const existingMessage = document.querySelector('.now-just-me-message');
+      if (existingMessage) {
+        existingMessage.remove();
+      }
     }
-    // Remove the message if it exists
-    const existingMessage = document.querySelector('.now-just-me-message');
-    if (existingMessage) {
-      existingMessage.remove();
-    }
-  }
-  hideFeed();
-});
+    hideFeed();
+  });
 
-observer.observe(document.body, {
-  childList: true,
-  subtree: true
-});
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+}
