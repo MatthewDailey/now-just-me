@@ -1,4 +1,4 @@
-# Feed Blocker - Firefox Extension
+# Now Just Me - Firefox Extension
 
 A Firefox extension that hides the feed on LinkedIn and Twitter/X, helping you stay focused and avoid distractions.
 
@@ -17,7 +17,7 @@ A Firefox extension that hides the feed on LinkedIn and Twitter/X, helping you s
 1. Clone this repository:
    ```bash
    git clone [repository-url]
-   cd feed-blocker
+   cd now-just-me
    ```
 
 2. Install dependencies:
@@ -77,7 +77,7 @@ The extension uses content scripts that:
 ## Project Structure
 
 ```
-feed-blocker/
+now-just-me/
 ├── src/
 │   ├── linkedin.ts    # LinkedIn feed hiding logic
 │   └── twitter.ts     # Twitter/X feed hiding logic
