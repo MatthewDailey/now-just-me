@@ -19,8 +19,10 @@ if [ -f icon.png ]; then
     cp icon.png package/
 fi
 
-# Create zip file
-zip -r now-just-me.zip package/*
+# Create zip file (cd into package dir so files are at zip root)
+cd package
+zip -r ../now-just-me.zip *
+cd ..
 
 # Clean up
 rm -rf package

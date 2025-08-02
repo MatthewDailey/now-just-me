@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Hide feeds on LinkedIn and Twitter",
   "icons": {
-    "48": "icon.png"
   },
   "content_scripts": [
     {
